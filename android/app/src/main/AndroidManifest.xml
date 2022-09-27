@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.janus_app_contest">
    <application
-        android:label="janus_app_contest"
+        android:label="야누스"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
