@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+TextEditingController controller1 = TextEditingController();
+TextEditingController controller2 = TextEditingController();
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -26,10 +27,27 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('hello'),
+          title: const Text('테스트'),
         ),
-        body: const Center(
-          child: Text('Hello World!!!!'),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('출발점'),
+            TextField(
+              controller: controller1,
+            ),
+            const Text('도착점'),
+            TextField(
+              controller: controller2,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  controller1.text = '';
+                  controller2.text = '';
+                },
+                child: const Text('제출')
+            )
+          ],
         ),
       ),
     );
