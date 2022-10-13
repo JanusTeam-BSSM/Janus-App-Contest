@@ -3,7 +3,7 @@ import 'package:mqtt_client/mqtt_server_client.dart';
 
 Future<MqttServerClient> connect() async {
   MqttServerClient client =
-  MqttServerClient.withPort('broker.emqx.io', 'flutter_client', 1883);
+  MqttServerClient.withPort('15.37.0.10', 'flu_client', 1883);
   client.logging(on: true);
   client.onConnected = onConnected;
   client.onDisconnected = onDisconnected;
