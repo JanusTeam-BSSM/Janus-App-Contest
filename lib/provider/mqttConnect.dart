@@ -3,7 +3,7 @@ import 'package:mqtt_client/mqtt_server_client.dart';
 
 Future<MqttServerClient> connect() async {
   MqttServerClient client =
-  MqttServerClient.withPort('15.37.0.10', 'flu_client', 1883);
+  MqttServerClient.withPort('10.37.0.5', 'app1', 1883);
   client.logging(on: true);
   client.onConnected = onConnected;
   client.onDisconnected = onDisconnected;
@@ -13,7 +13,7 @@ Future<MqttServerClient> connect() async {
   client.pongCallback = pong;
 
   final connMessage = MqttConnectMessage()
-      .withWillTopic('willtopic')
+      .withWillTopic('app1')
       .withWillMessage('Will message')
       .startClean()
       .withWillQos(MqttQos.atLeastOnce);
