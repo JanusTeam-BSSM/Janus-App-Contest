@@ -68,33 +68,31 @@ class _LoginState extends State<Login> {
         title: const Text("James MQTT Chat"),
         centerTitle: true,
       ),
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(),
-              ),
-              margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: TextField(
-                controller: _controller,
-                decoration: const InputDecoration(
-                    hintText: "닉네임",
-                    border: InputBorder.none
-                ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(),
+            ),
+            margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: TextField(
+              controller: _controller,
+              decoration: const InputDecoration(
+                  hintText: "닉네임",
+                  border: InputBorder.none
               ),
             ),
-            widget.chatProvider.isLoad ? const Text("Loading") : MaterialButton(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-              color: Colors.blue,
-              textColor: Colors.white,
-              child: const Text("입장", style: TextStyle(fontWeight: FontWeight.bold),),
-              onPressed: () async => await _move(context),
-            )
-          ],
-        ),
+          ),
+          widget.chatProvider.isLoad ? const Text("Loading") : MaterialButton(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+            color: Colors.blue,
+            textColor: Colors.white,
+            child: const Text("입장", style: TextStyle(fontWeight: FontWeight.bold),),
+            onPressed: () async => await _move(context),
+          )
+        ],
       ),
     );
   }
@@ -377,7 +375,7 @@ class MqttRepo{
     }
   }
 
-  MqttServerClient client = MqttServerClient("10.37.0.3", "c")
+  MqttServerClient client = MqttServerClient("192.168.0.2", "c")
     ..port = 1883
     ..setProtocolV311()
     ..keepAlivePeriod = 20
